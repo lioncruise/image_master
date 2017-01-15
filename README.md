@@ -17,7 +17,7 @@
 
 用户可上传自己的图片
 
-<img src="/screenshots/result.png" width="500"> 
+<img src="/screenshots/09-result.png" width="500"> 
 
 用户可分析图片，获得一段图片的描述
 
