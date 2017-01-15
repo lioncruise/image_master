@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>
+
+        ImageMaster
+
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+</head>
+<body class="bs-docs-home">
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+<!-- Docs master nav -->
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">ImageMaster</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="../getting-started/">Account</a>
+                </li>
+                <li>
+                    <a href="../css/">Myphotos</a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<div class="container">
+
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">photos</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown" class="active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">classification <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">tree</a></li>
+                            <li><a href="#">mountain</a></li>
+                            <li><a href="#">people</a></li>
+
+                            <li><a href="#">others</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+</div>
+<br>
+<div class="container">
+
+    <div class="container projects">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail">
+                   <!-- <a href="http://codeguide.bootcss.com" title="Bootstrap 编码规范" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'codeguide'])"><img class="lazy" src="image/image1.jpg?v2" width="300" height="150" data-src="http://static.bootcss.com/www/assets/img/codeguide.png" alt="Headroom.js"></a>
+-->
+                  <%= image_tag @url %>
+
+                </div>
+              <div> <%= button_to 'analyze',analysize_results_path(url:@url),method: :post, class: 'btn btn-primary form-control'  %> </div>
+            </div>
+
+
+
+        </div>
+        <p>
+            <!--<%= form_for :img, :url => analysize_results_path do |f| %>
+            <div class="col-sm-3"> <%= button_to 'analyze',analysize_results_path(url:@url),method: :post, class: 'btn btn-primary form-control'  %> </div>
+             <%= f.submit:analyze, :class=>'btn btn-primary form-control' ,:href=>"../analysize/results?url="+@url %>
+            <% end %>-->
+            <!--<button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-edit"></span>&nbsp;Rename</button>
+            <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Classify</button>
+-->
+        </p>
+
+    </div>
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+
+
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>
+
+        ImageMaster
+
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+</head>
+<body class="bs-docs-home">
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+<!-- Docs master nav -->
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">ImageMaster</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="../getting-started/">Account</a>
+                </li>
+                <li>
+                    <a href="../css/">Myphotos</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <!-- <li><a href="http://job.bootcss.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-job'])" target="_blank">Sign in</a></li>  -->
+                <li><a><%= @name %>, Welcome</a></li>
+
+                <li><a href="http://expo.bootcss.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_blank">Log out</a></li>
+                <li><a href="http://blog.getbootstrap.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-blog'])" target="_blank">About us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">photos</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown" class="active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">classification <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">tree</a></li>
+                            <li><a href="#">mountain</a></li>
+                            <li><a href="#">people</a></li>
+
+                            <li><a href="#">others</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+</div>
+<br>
+<div class="container">
+
+    <div class="container projects">
+
+        <div class="row">
+            <%= @pictures.each do |picture| %>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail">
+                    <%= link_to image_tag(picture.url), { :controller => 'pictures',:action => 'show' ,:name=>picture.url}  %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="container">
+      <span>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</span>
+        <nav>
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </nav>
+
+        <div class="col-sm-4">
+            <%= form_for :uploadpicture, :url => upload_upload_path do |f| %>
+
+            <%= f.file_field :url, :id => 'file-0a', :class => 'file' %>
+            <%= f.hidden_field :url_cache %>
+            <br>
+
+            <!-- <%= f.submit :Upload ,:class=>'btn btn-primary'%> -->
+            <%end%>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Footer
+================================================== -->
+<footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+
+
+
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
+<!--<%= form_for :uploadpicture, url: upload_upload_path do |f| %>
+    <div class="field">
+      <%= f.file_field :url %>
+      <%= f.hidden_field :url_cache %>
+    </div><hr/>
+    <%= f.submit %>
+<%end%>
+-->
+
+
+

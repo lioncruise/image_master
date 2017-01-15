@@ -1,0 +1,30 @@
+<head>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../../assets/javascript/fileinput.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/stylesheets/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+
+  <title>ImageMaster</title>
+  <!-- Bootstrap core CSS -->
+
+</head>
+<h1>Search Picture</h1>
+<div class="container">
+    <div class="col-sm-6">
+        <%= form_for :uploadpicture, :url => upload_upload_path do |f| %>
+
+          <%= f.file_field:url, :id => 'file-0a', :class => 'file' %>
+          <%= f.hidden_field :url_cache %>
+          <br>
+
+        <!-- <%= f.submit:Upload ,:class=>'btn btn-primary'%> -->
+        <%end%>
+
+    </div>
+
+</div>
+
