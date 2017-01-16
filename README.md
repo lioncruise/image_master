@@ -1,4 +1,4 @@
-# ImageMaster
+# ImageMaster [![Build Status](https://travis-ci.org/lioncruise/image_master.svg?branch=master)](https://travis-ci.org/lioncruise/image_master)
 
 本项目已部署在heroku平台上: [ImageMaster](https://agile-image-master.herokuapp.com/)
 
