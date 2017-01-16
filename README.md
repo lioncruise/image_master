@@ -2,6 +2,8 @@
 
 本项目已部署在heroku平台上: [ImageMaster](https://agile-image-master.herokuapp.com/)
 
+GitHub地址：[ImageMaster](git@github.com:lioncruise/image_master.git)
+
 
 ## 截图
 
