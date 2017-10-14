@@ -1,58 +1,55 @@
 # ImageMaster [![Build Status](https://travis-ci.org/lioncruise/image_master.svg?branch=master)](https://travis-ci.org/lioncruise/image_master)
 
-本项目已部署在heroku平台上: [ImageMaster](https://agile-image-master.herokuapp.com/)
+This project has been deployed on Heroku cloud platform [ImageMaster](https://agile-image-master.herokuapp.com/)
 
-GitHub地址：[ImageMaster](https://github.com/lioncruise/image_master)
+GitHub url：[ImageMaster](https://github.com/lioncruise/image_master)
 
 
-## 截图
-
+## Functions
 
 <img src="/screenshots/01-home-page.png" width="700">  
 
-* 用户可根据关键字搜索图片
+* User can search pictures via keywords
 
 <img src="/screenshots/10-search.png" width="700">
 
-* 用户可上传自己的图片
+* User can upload their pictures on the cloud storage
 
 <img src="/screenshots/07-upload.png" width="300"> 
 
-* 用户可分析图片，获得一段图片的描述
+* User can analyze the picture and get a description of the picture
 
 <img src="/screenshots/09-result.png" width="500"> 
 
-## 说明
+## Environment
 
-使用的库与数据库
+* Front end Library: [Bootstrap](http://getbootstrap.com/)
+* Development database: [sqlite3](https://www.sqlite.org/)
+* Test and production database: [Postgresql](http://postgresapp.com/)
+* Object storage: [qiniu](http://www.qiniu.com/)
 
-* 使用[Bootstrap](http://getbootstrap.com/)作为前端库
-* 开发环境使用[sqlite3](https://www.sqlite.org/)作为数据库
-* 运行环境使用[Postgresql](http://postgresapp.com/)作为数据库
-* 使用[qiniu](http://www.qiniu.com/)作为图片存储平台
+## Instructions
 
-## 使用
+* Picture search function can be used without signing in
+* Uploading and analyzing pictures requires registering and signing in first
+* test username and password: milly, 123456789
 
-* 图片搜索功能不需登陆就可以使用
-* 图片上传及分析要求用户先注册登陆
-* 测试用户名：milly  密码：123456789
+## Test
 
-## 测试
+Use cucumber to execute integration tests:
 
-###cucumber
 ```
-运行准备：
 rails generate cucumber:install capybara
 rails generate cucumber_rails_training_wheels:install
 rails generate rspec:install
 rake db:test:prepare
-运行：
-cucumber (全部执行)
-cucumber features/XX.feature (执行XX测试，.feature文件在features文件夹下)
+cucumber
+cucumber features/XX.feature
 ```
-## Future Work
 
-1. 完善用户界面
-2. 添加用户权限
-3. 图片批量上传
-4. 模糊搜索
+## TODO in the future
+
+1. optimize UI
+2. add user permissions
+3. batch upload pictures
+4. fuzzy search
